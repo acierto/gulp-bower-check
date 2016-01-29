@@ -1,0 +1,43 @@
+{
+  "name": "gulp-bower-check",
+  "description": "Checks the bower's file repository dependencies",
+  "version": "0.0.1",
+  "homepage": "https://github.com/acierto/gulp-bower-check",
+  "author": {
+    "name": "Bogdan Nechyporenko"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:acierto/gulp-bower-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/acierto/gulp-bower-check/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/acierto/gulp-bower-check/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 5.0.0"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "dependencies": {
+    "lodash": "3.8.0",
+    "sha1": "1.1.1",
+    "split-lines": "1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "3.9.0",
+    "gulp-log": "0.1.2",
+    "gulp-release-it": "1.0.10"
+  },
+  "keywords": [
+    "gulpplugin",
+    "verify bower.json"
+  ]
+}
