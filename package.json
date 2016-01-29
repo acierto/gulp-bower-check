@@ -1,7 +1,7 @@
 {
   "name": "gulp-bower-check",
   "description": "Checks the bower's file repository dependencies",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/acierto/gulp-bower-check",
   "author": {
     "name": "Bogdan Nechyporenko"
@@ -32,6 +32,7 @@
     "split-lines": "1.0.0"
   },
   "devDependencies": {
+    "coffee-script": "1.9.2",
     "gulp": "3.9.0",
     "gulp-log": "0.1.2",
     "gulp-release-it": "1.0.10"
