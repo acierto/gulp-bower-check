@@ -15,7 +15,7 @@ var _ = require('lodash');
 
 module.exports = function (gulp) {
 
-    gulp.task('verify-repositories', _('Verifies that repositories as dependencies are tags', function () {
+    gulp.task('verify-repositories', function () {
 
         var done = this.async();
         var bowerJson = require('./bower.json');
@@ -50,7 +50,7 @@ module.exports = function (gulp) {
                 });
             }
         });
-    }));
+    });
 
     gulp.task('default', ['verify-repositories']);
 };
