@@ -34,7 +34,6 @@ module.exports = function (gulp) {
                 exec('git ls-remote ' + repository, function (err, stdout, stderr) {
                     if (err || stderr) {
                         gutil.log(err || stderr);
-                        this.emit('end');
                     }
 
                     var found = _.reduce(splitLines(stdout), function (result, line, index) {
