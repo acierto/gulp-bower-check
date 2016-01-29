@@ -15,13 +15,12 @@ var _ = require('lodash');
 
 module.exports = function (gulp) {
 
-    gulp.task('verify-repositories', function () {
+    gulp.task('verify-repositories', function (cb) {
 
-        var done = this.async();
         var bowerJson = require('./bower.json');
 
         if (_.isEmpty(bowerJson.dependencies)) {
-            done();
+            cb();
         }
 
         _.forEach(bowerJson.dependencies, function (dependency) {
@@ -34,7 +33,7 @@ module.exports = function (gulp) {
                 exec('git ls-remote ' + repository, function (err, stdout, stderr) {
                     if (err || stderr) {
                         log(err || stderr, {level: 'error'});
-                        done();
+                        cb();
                         return;
                     }
 
@@ -46,7 +45,7 @@ module.exports = function (gulp) {
                         log('Tag ' + tagVersion + ' hasn\'t been found for repository ' + repository, {level: 'fatal'});
                     }
 
-                    done();
+                    cb();
                 });
             }
         });
