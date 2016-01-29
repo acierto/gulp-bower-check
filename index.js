@@ -9,7 +9,7 @@
 'use strict';
 
 var exec = require('child_process').exec;
-var log = require('gulp-log2');
+var gutil = require('gulp-util');
 var splitLines = require('split-lines');
 var _ = require('lodash');
 
@@ -17,7 +17,8 @@ module.exports = function (gulp) {
 
     gulp.task('verify-repositories', function (cb) {
 
-        var bowerJson = require('./bower.json');
+        var cwd = process.cwd();
+        var bowerJson = require(cwd + '/bower.json');
 
         if (_.isEmpty(bowerJson.dependencies)) {
             cb();
@@ -32,9 +33,8 @@ module.exports = function (gulp) {
 
                 exec('git ls-remote ' + repository, function (err, stdout, stderr) {
                     if (err || stderr) {
-                        log(err || stderr, {level: 'error'});
-                        cb();
-                        return;
+                        gutil.log(err || stderr);
+                        this.emit('end');
                     }
 
                     var found = _.reduce(splitLines(stdout), function (result, line, index) {
@@ -42,9 +42,8 @@ module.exports = function (gulp) {
                     }, false);
 
                     if (!found) {
-                        log('Tag ' + tagVersion + ' hasn\'t been found for repository ' + repository, {level: 'fatal'});
+                        gutil.log('Tag ' + tagVersion + ' hasn\'t been found for repository ' + repository);
                     }
-
                     cb();
                 });
             }
