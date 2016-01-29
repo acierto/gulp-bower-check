@@ -12,7 +12,7 @@ npm install gulp-bower-check --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-require('gulp-bower-check');
+require('gulp-bower-check')(gulp)
 ```
 
 ## Using gulp-bower-check
