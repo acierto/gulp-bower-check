@@ -13,12 +13,6 @@
   "bugs": {
     "url": "https://github.com/acierto/gulp-bower-check/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/acierto/gulp-bower-check/blob/master/LICENSE-MIT"
-    }
-  ],
   "main": "Gruntfile.js",
   "engines": {
     "node": ">= 5.0.0"
@@ -28,17 +22,18 @@
   },
   "dependencies": {
     "gulp-util": "3.0.7",
-    "lodash": "3.8.0",
+    "lodash": "4.11.1",
     "sha1": "1.1.1",
     "split-lines": "1.0.0"
   },
   "devDependencies": {
-    "coffee-script": "1.9.2",
-    "gulp": "3.9.0",
-    "gulp-release-it": "1.0.10"
+    "coffee-script": "1.10.0",
+    "gulp": "3.9.1",
+    "gulp-release-it": "1.1.2"
   },
   "keywords": [
     "gulpplugin",
     "verify bower.json"
-  ]
+  ],
+  "license": "MIT"
 }
